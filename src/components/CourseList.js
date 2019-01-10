@@ -31,6 +31,7 @@ class CourseList extends Component{
       query: this.state.searchString
     })
     .then((response)=>{
+      console.log(response.items);
       this.setState({
         courses: response.items
       });
@@ -65,7 +66,7 @@ class CourseList extends Component{
               {this.state.courses.map(currentCourse=>{
                 return (
                   <Grid item xs={12} sm={6} lg={4} xl={3}>
-                    <Course course={currentCourse} />
+                    <Course course={currentCourse} />  
                   </Grid>
                 )
               })}
